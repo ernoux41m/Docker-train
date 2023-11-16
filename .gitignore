@@ -1,0 +1,34 @@
+# Project #
+###########
+/.env
+./python-example/**
+./python-example/Dockerfile
+./python-example/
+
+# Python #
+##########################
+venv/
+/packages/streamlit/.streamlit/secrets.toml
+.env
+
+# IDE #
+#######
+## VSCode // TODO
+.vscode/*
+!.vscode/terminals.json
+
+# Artifacts #
+#############
+__pycache__/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.xlsx
+
+# Included #
+############
+!.gitkeep
