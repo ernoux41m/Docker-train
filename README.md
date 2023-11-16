@@ -1,4 +1,7 @@
-Ce repository a pour but de vous faire comprendre les mécanismes de construction d'un container Docker.
+Ce repository a pour but de vous faire comprendre les mécanismes de construction d'une image Docker, de run de container et de diffusion d'image sur une registry.
+On utilisera la ligne de commande afin d'être au plus proche du fonctionnement de Docker.
+
+Ouvrez la documentation de docker : https://docs.docker.com/ elle est claire et efficace
 
 ## Initialisation du projet
 
@@ -6,7 +9,7 @@ Ce repository a pour but de vous faire comprendre les mécanismes de constructio
 - Se placer dans le dossier du projet exemple bash
 - Lire le fichier Dockerfile & le fichier script.sh
 - Lancer la commande `docker build -t my-hello-world:0.1 .` afin de construire l'image docker
-  - Ici le -t permet de nommer notre image et de lui donner un tag (ici 0.1)
+  - Ici le -t permet de nommer notre image et de lui donner un tag (ici 0.1), pensez à l'incrémenter à chaque modification de votre image
   - Le . permet de dire que le Dockerfile est dans le dossier courant
 - Lancer la commande `docker run my-hello-world` afin de lancer le container
 
@@ -33,4 +36,10 @@ Ce repository a pour but de vous faire comprendre les mécanismes de constructio
   - Authentifier vous sur la registry github : https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic
   - Pusher votre image sur la registry : https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pushing-container-images
 - Supprimer votre image en local : `docker rmi <image_name>`
-- Récupérer votre image depuis la registry github : `docker pull <image_name>`, 
+- Récupérer votre image depuis la registry github : `docker pull <image_name>`, la lancer et vérifier que tout fonctionne
+- Récupérer l'image de votre voisin.e et la lancer
+
+
+## Pour aller plus loin
+- Comprendre les bonnes pratique de construction d'image : https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+- Lire la doc du nouveau builder buildkit : https://docs.docker.com/develop/develop-images/build_enhancements/
