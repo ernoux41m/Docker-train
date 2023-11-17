@@ -5,4 +5,4 @@ WORKDIR /app
 COPY script.sh script-hello-world.sh
 
 # Exécute le script
-CMD ["sh", "/script-hello-world.sh"]
+CMD ["sh", "/app/script-hello-world.sh"]

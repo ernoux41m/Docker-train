@@ -1,0 +1,18 @@
+FROM python:3-alpine
+WORKDIR /app
+
+# Copie du script main.py dans le conteneur
+COPY main.py /app/
+
+# Installation de la bibliothèque requests si nécessaire
+RUN pip install requests
+
+# Définition de la variable d'environnement NAME avec une valeur par défaut
+ENV NAME="Matthieu Ernoux"
+
+# Exécute le script main.py en boucle indéfiniment
+CMD ["python", "/app/main.py"]
+
+# Healthcheck pour vérifier si main.py est en cours d'exécution
+COPY healthcheck.py /app/  
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD ["python", "/app/healthcheck.py"]
